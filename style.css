@@ -9,6 +9,7 @@
 :root {
     --background-primary:#f5f5f5;
     --background-toggle:#fff;
+    --span-color:#1863ff;
 }
 
 body {
@@ -29,4 +30,43 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.toggle span {
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: var(--span-color);
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+.toggle span:nth-child(1) {
+    transform: translateY(-15px);
+    width: 25px;
+    left: 15px;
+}
+
+.toggle.active span:nth-child(1) {
+    width: 40px;
+    transform: translateY(0px) rotate(45deg);
+    transition-delay: 0.125s;
+}
+
+.toggle span:nth-child(2) {
+    transform: translateY(15px);
+    width: 15px;
+    left: 15px;
+}
+
+.toggle.active span:nth-child(2) {
+    transform: translateY(0px) rotate(315deg);
+    width: 40px;
+    transition-delay: 0.25s;
+}
+
+.toggle.active span:nth-child(3) {
+    transform: translateX(60px);
 }
